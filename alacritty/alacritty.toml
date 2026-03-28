@@ -4,7 +4,6 @@ opacity = 0.9
 blur = true
 
 [font]
-# AJUSTE AQUI: Use o nome que apareceu no comando fc-list acima
 normal = { family = "FiraCode Nerd Font", style = "Regular" }
 bold = { family = "FiraCode Nerd Font", style = "Bold" }
 size = 11.0

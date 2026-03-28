@@ -1,0 +1,23 @@
+* {
+    background:                  #2d353b;
+    foreground:                  #d3c6aa;
+    border-color:                #a7c080;
+    
+    active-background:           #a7c080;
+    active-foreground:           #2d353b;
+    normal-background:           #2d353b;
+    normal-foreground:           #d3c6aa;
+    urgent-background:           #e67e80;
+    urgent-foreground:           #d3c6aa;
+    
+    selected-active-background:  #e67e80;
+    selected-active-foreground:  #d3c6aa;
+    selected-normal-background:  #a7c080;
+    selected-normal-foreground:  #2d353b;
+    selected-urgent-background:  #dbbc7f;
+    selected-urgent-foreground:  #2d353b;
+
+    background-color:            transparent;
+    cursor-width:                1px;
+    font:                        "Caskaydia Cove Nerd Font 14";
+}
