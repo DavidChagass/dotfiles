@@ -1,17 +1,13 @@
 {
     "layer": "top",
     "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 24,
     "margin-top": 2,
-    "margin-left": 2,
-    "margin-right": 2,
+    "margin-left": 5,
+    "margin-right": 5,
+    "spacing": 0,
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window"
+        "mpris"
     ],
     "modules-center": [
         "clock"
@@ -20,62 +16,39 @@
         "network",
         "pulseaudio",
         "battery",
-        "tray"
+        "tray",
+        "custom/power"
     ],
-    "fixed-center": true,
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
-        "format": "{name}"
-    },
-    "clock": {
-        "format": "  {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤮",
-        "tooltip-format": "{ifname} via {gwaddr}"
-    },
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-muted": "󰝟",
+    "pulseaudio#output": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  Mute",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": [
                 "",
                 "",
                 ""
             ]
         },
-        "on-click": "pavucontrol",
+        "on-click": "rofi --show drun | grep -i volume"
+    },
+    "network": {
+        "format-wifi": "   {essid}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "alacritty --class floating_nmtui -e nmtui"
+    },
+    "bluetooth": {
+        "format": "󰂯  {status}",
+        "format-connected": "󰂯  {device_alias}",
+        "format-on": "󰂯  On",
+        "format-off": "󰂲  Off",
+        "tooltip-format": "{controller_alias}",
+        "on-click": "blueman-manager"
     },
     "custom/power": {
         "format": "⏻",
-        "on-click": "wlogout",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/power.sh"
     }
 }
